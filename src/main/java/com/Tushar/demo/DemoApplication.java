@@ -17,9 +17,9 @@ public class DemoApplication {
 	 System.out.println(student.getName());
 	 System.out.println(student.getAge());*/
 
-		OrderService orderService = context.getBean(OrderService.class);
+	/*	OrderService orderService = context.getBean(OrderService.class);
 
-		orderService.placeOrder();
+		orderService.placeOrder();*/
 	}
 
 }
