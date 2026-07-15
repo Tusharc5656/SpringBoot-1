@@ -1,4 +1,12 @@
 package com.Tushar.demo.StudentServer;
 
-public interface StudentRepository extends JpaRepository<Student,{
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class StudentRepository {
+
+    public Student save(Student student) {
+        System.out.println("Student Information saved");
+        return student;
+    }
 }
