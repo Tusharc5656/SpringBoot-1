@@ -1,5 +1,6 @@
-package com.Tushar.demo.StudentServer;
+package com.Tushar.demo.StudentServer.Repository;
 
+import com.Tushar.demo.StudentServer.Entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
