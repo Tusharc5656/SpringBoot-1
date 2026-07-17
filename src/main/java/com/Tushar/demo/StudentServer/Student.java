@@ -1,10 +1,31 @@
 package com.Tushar.demo.StudentServer;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Student {
-    int id;
-    String name;
-    int age;
-    String department;
+    @Id
+    private int id;
+    private String name;
+    private int age;
+    private String department;
+
+    public Student() {
+    }
+
+    public Student(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
+    public Student(int id, String name, int age, String department) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.department = department;
+    }
 
     public int getId() {
         return id;
