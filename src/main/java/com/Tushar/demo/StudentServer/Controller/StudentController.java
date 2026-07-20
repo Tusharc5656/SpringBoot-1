@@ -7,6 +7,8 @@ import com.Tushar.demo.StudentServer.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.Tushar.demo.StudentServer.DTO.UpdateStudentRequestDTO;
+import com.Tushar.demo.StudentServer.DTO.UpdateStudentResponseDTO;
 
 @RestController
 public class StudentController {
@@ -42,12 +44,16 @@ public class StudentController {
     }
 
     @PutMapping("/updateStudent/{id}")
-    public ResponseEntity<?> updateStudent(@PathVariable int id, @RequestBody Student student){
-        Student result = studentService.studentUpdate(id, student);
-        if(result == null)
-        {
+    public ResponseEntity<?> updateStudent(
+            @PathVariable int id,
+            @RequestBody UpdateStudentRequestDTO requestDTO) {
+
+        UpdateStudentResponseDTO result = studentService.studentUpdate(id, requestDTO);
+
+        if (result == null) {
             return ResponseEntity.status(400).body("Invalid input");
         }
+
         return ResponseEntity.status(200).body(result);
     }
 
