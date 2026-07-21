@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -27,7 +28,8 @@ public class StudentService {
         return mapToResponseDTO(student);
     }
 
-    public Student getStudentById(int id) {
+    public Student getStudentById(int id) throws Exception {
+       Optional<Student> student = studentRepository.findById(id);
         return studentRepository.findById(id).orElse(null);
     }
 

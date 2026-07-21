@@ -32,7 +32,7 @@ public class StudentController {
     }
 
     @GetMapping("/getStudent/{id}")
-    public ResponseEntity<?> getStudentById(@PathVariable int id){
+    public ResponseEntity<?> getStudentById(@PathVariable int id) throws Exception {
 
         Student student = studentService.getStudentById(id);
 
